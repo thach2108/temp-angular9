@@ -1,0 +1,20 @@
+<app-card-customize [csTitle]="titleTemplate">
+  <ng-template #titleTemplate>Recent Updates (<span class="text-primary">load more</span>)</ng-template>
+  <ng-container *ngFor="let item of (model$ | async), let i=index">
+    <div class="card mb-3">
+      <div class="card-header cursor-pointer" (click)="activeCollapse(i)" [attr.aria-expanded]="!isCollapseds[i]">
+        <span class="font-16">{{item.title}} - </span><span>{{item.lastTime}}</span>
+        <div class="card-header-actions font-16" style="padding: 4px 0; line-height: 1;">
+          <i *ngIf="!isCollapseds[i]" class="icon-minus"></i>
+          <i *ngIf="isCollapseds[i]" class="icon-plus"></i>
+        </div>
+      </div>
+      <div class="" [isAnimated]="true" (collapsed)="collapsed($event)" (expanded)="expanded($event)"
+        [collapse]="isCollapseds[i]">
+        <div class="pt-3 px-3">
+          <p *ngFor="let sub_item of item.content" class="text-center">{{sub_item}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</app-card-customize>

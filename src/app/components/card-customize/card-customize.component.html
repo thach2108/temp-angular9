@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header h4">
+    <ng-container *ngIf="!isStringType">
+      <ng-container *ngTemplateOutlet="csTitle">
+        This text is not displayed
+      </ng-container>
+    </ng-container>
+    <span *ngIf="isStringType">{{csTitle}}</span>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

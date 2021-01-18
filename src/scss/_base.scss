@@ -1,0 +1,21 @@
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+@for $i from 10 through 50 {
+  .font-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+.font-weight-500{
+  font-weight: 500;  
+}

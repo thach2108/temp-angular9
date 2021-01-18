@@ -1,0 +1,7 @@
+<app-card-customize csTitle="APIs Usage & Status">
+  <div *ngFor="let item of (model$ | async)" class="mb-3">
+    <span class="font-16 font-weight-500">{{item.title}}</span>
+    <progressbar [max]="item.total" [value]="item.value" type="dark"
+      [striped]="true" [animate]="true"><i>{{item.value}} / {{item.total}}</i></progressbar>
+  </div>
+</app-card-customize>
