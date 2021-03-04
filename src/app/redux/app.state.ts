@@ -6,6 +6,11 @@ import {
   initialState as initialAuthState
 } from './auth';
 
+import {
+  reducers as LanguageReducers,
+  initialState as initialLanguageState
+} from './language';
+
 //
 import {
   IState as ErrorsState,
@@ -30,6 +35,7 @@ import {
  */
 export interface IAppState {
   errors: ErrorsState;
+  language: string;
   auth: AuthState;
   dashboard: DashboardState;
   attackPanel: AttackPanelState;
@@ -37,6 +43,7 @@ export interface IAppState {
 
 export const appReducers: ActionReducerMap<IAppState, any> = {
   errors: ErrorsReducers,
+  language: LanguageReducers,
   auth: AuthReducers,
   dashboard: DashboardReducers,
   attackPanel: AttackPanelReducers,
@@ -44,6 +51,7 @@ export const appReducers: ActionReducerMap<IAppState, any> = {
 
 export const initialAppState: IAppState = {
   errors: initialErrorsState,
+  language: initialLanguageState,
   auth: initialAuthState,
   dashboard: initialDashboardState,
   attackPanel: initialAttackPanelState

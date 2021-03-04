@@ -7,6 +7,7 @@ import { AtRunningAttackComponent } from './components/at-running-attack/at-runn
 import { ComponentsModule } from '../../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
+    TranslateModule
   ],
   declarations: [AttackPanelComponent, AtAttackPanelComponent, AtRunningAttackComponent]
 })

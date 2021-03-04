@@ -1,0 +1,36 @@
+stages:
+  - analysis
+  - build
+
+jshint:
+  image: eeacms/jslint
+  stage: analysis
+  script:
+    - jshint .
+  allow_failure: true
+
+Build:
+  stage: build
+  image: node:10.15.3
+  script:
+    - apt update -y
+    - apt install rsync -y
+    
+    # - npm i
+    # - npm run build:dev
+    
+  only:
+    - develop
+    
+Build-prod:
+  stage: build
+  image: node:10.15.3
+  script:
+    - apt update -y
+    - apt install rsync -y
+    
+    # - npm i
+    # - npm run build:dev
+
+  only:
+    - release

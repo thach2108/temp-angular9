@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'localhost:5000',
+  apiUrl: "http://dev.5fly.io:5000",
   appPrefix: 'AF'
 };

@@ -1,13 +1,18 @@
 // Here you can add other styles
 .navbar-toggler.d-none.d-lg-block + .nav.navbar-nav.ml-auto + button,
-.navbar-toggler.d-lg-none + a + button + .nav.navbar-nav.ml-auto + button + button{
+.navbar-toggler.d-lg-none
+  + a
+  + button
+  + .nav.navbar-nav.ml-auto
+  + button
+  + button {
   display: none !important;
 }
 
-.progress{
+.progress {
   height: 1.5rem;
 }
 
-.toast-container .ngx-toastr{
+.toast-container .ngx-toastr {
   width: 350px;
 }

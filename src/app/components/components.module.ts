@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CardCustomizeComponent } from './card-customize/card-customize.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule
   ],
   exports: [
-    CardCustomizeComponent,
+    CardCustomizeComponent
   ],
   declarations: [CardCustomizeComponent]
 })

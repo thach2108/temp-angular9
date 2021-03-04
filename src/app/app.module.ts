@@ -37,8 +37,19 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ReduxModule } from './redux/redux.module';
 import { ErrorsComponent } from './containers/errors/errors.component';
 import { ToastrModule } from 'ngx-toastr';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { LanguageComponent } from './components/language/language.component';
+import { FormsModule } from '@angular/forms';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -53,6 +64,13 @@ import { ToastrModule } from 'ngx-toastr';
     ReduxModule,
     LoadingBarHttpClientModule,
     ToastrModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   declarations: [
     AppComponent,
@@ -61,13 +79,14 @@ import { ToastrModule } from 'ngx-toastr';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    ErrorsComponent
+    ErrorsComponent,
+    LanguageComponent
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  exports: [],
+  exports: [LanguageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
