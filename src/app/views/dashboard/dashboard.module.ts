@@ -11,6 +11,7 @@ import { DsApisUsageComponent } from './components/ds-apis-usage/ds-apis-usage.c
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { ComponentsModule } from '../../components/components.module';
+import { DirectivesModule } from '../../directives/directives.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { ComponentsModule } from '../../components/components.module';
     CollapseModule.forRoot(),
     ProgressbarModule.forRoot(),
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    DirectivesModule
   ],
   declarations: [ DashboardComponent, ServerUsageAndStatusComponent, DsRecentUpdatesComponent, DsApisUsageComponent ]
 })
